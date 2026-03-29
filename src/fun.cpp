@@ -59,9 +59,9 @@ unsigned int faStr2(const char *str) {
 }
 unsigned int faStr3(const char *str) {
     if (str == nullptr) return 0;
-    int totalLength = 0;  
-    int wordCount = 0;   
-    int currentLength = 0; 
+    int totalLength = 0;
+    int wordCount = 0;
+    int currentLength = 0;
     bool inWord = false;
     for (; *str != '\0'; ++str) {
         if (!isspace((unsigned char)*str)) {

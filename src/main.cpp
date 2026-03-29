@@ -2,5 +2,12 @@
 #include "fun.h"
 
 int main() {
-    return 0;
+    int a = faStr1("asd 12 sda");
+    cout <<a;
+
+    int b = faStr2("Adas da Ada");
+    cout <<b;
+
+    int c = faStr("dasd dwadawda dasd a");
+    cout>>c;
 }

@@ -82,6 +82,6 @@ unsigned int faStr3(const char *str) {
     }
 
     if (wordCount == 0) return 0;
-    double average = static_cast<double>totalLength / wordCount;
-    return static_cas<unsigned int>round(average);
+    double average = static_cast<double>(totalLength) / wordCount;
+    return static_cast<unsigned int>(round(average));
 }

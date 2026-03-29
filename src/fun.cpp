@@ -1,19 +1,16 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
-#include <cctype> 
-#include <cstring> 
-#include <cmath>  
-
+#include <cctype>
+#include <cstring>
+#include <cmath>
 unsigned int faStr1(const char *str) {
     if (str == nullptr) return 0;
     unsigned int count = 0;
     bool inWord = false;
     bool hasDigit = false;
-
     for (const char* p = str; ; ++p) {
         char ch = *p;
         bool isSpace = std::isspace(static_cast<unsigned char>(ch));
-
         if (isSpace || ch == '\0') {
             if (inWord) {
                 if (!hasDigit) {
@@ -35,20 +32,15 @@ unsigned int faStr1(const char *str) {
     }
     return count;
 }
-
 unsigned int faStr2(const char *str) {
     if (!str) return 0;
     unsigned int count = 0;
-
     const char *p = str;
     while (true) {
         while (*p && std::isspace(static_cast<unsigned char>(*p))) ++p;
         if (!*p) break;
-
         const char *start = p;
-
         while (*p && !std::isspace(static_cast<unsigned char>(*p))) ++p;
-
         unsigned int wlen = static_cast<unsigned int>(p - start);
         if (wlen == 0) continue;
         bool ok = true;
@@ -61,21 +53,16 @@ unsigned int faStr2(const char *str) {
                 break;
             }
         }
-
         if (ok) ++count;
     }
-
     return count;
 }
-
 unsigned int faStr3(const char *str) {
     if (str == nullptr) return 0;
-
     int totalLength = 0;  
     int wordCount = 0;   
     int currentLength = 0; 
     bool inWord = false;
-
     for (; *str != '\0'; ++str) {
         if (!isspace((unsigned char)*str)) {
             inWord = true;
@@ -95,6 +82,6 @@ unsigned int faStr3(const char *str) {
     }
 
     if (wordCount == 0) return 0;
-    double average = (double)totalLength / wordCount;
-    return (unsigned int)round(average);
+    double average = static_cast<double>totalLength / wordCount;
+    return static_cas<unsigned int>round(average);
 }
